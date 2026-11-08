@@ -9,6 +9,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "robotcode[analyze,repl,runner]>=2.8.0",
     "robotframework>=7.3.2",
     "robotframework-browser>=20.5.0",
     "robotframework-browser-batteries>=20.5.0",

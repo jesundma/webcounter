@@ -1,5 +1,6 @@
 *** Settings ***
 Library  Browser
+Library  Process
 
 *** Variables ***
 ${SERVER}    localhost:5001
@@ -17,3 +18,8 @@ Open And Configure Browser
     END
     New Context
     New Page  about:blank
+
+Reset Counter
+    ${result}=    Run Process    curl    --fail    --silent    --show-error
+    ...    --request    POST    ${HOME_URL}/reset
+    Should Be Equal As Integers    ${result.rc}    0
